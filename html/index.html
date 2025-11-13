@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Filmes & Séries</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>🎬 Catálogo de Filmes & Séries</h1>
+    </header>
+
+    <main class="container">
+        <section id="cadastro-form-container">
+            <h2>Cadastrar Novo Filme/Série</h2>
+            <form id="cadastroForm">
+                <div class="form-group">
+                    <label for="tipoConteudo">Tipo de Mídia:</label>
+                    <select id="tipoConteudo" required>
+                        <option value="Filme">Filme</option>
+                        <option value="Serie">Série</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="titulo">Título:</label>
+                    <input type="text" id="titulo" required>
+                </div>
+                <div class="form-group">
+                    <label for="ano">Ano de Lançamento:</label>
+                    <input type="number" id="ano" required>
+                </div>
+                <div class="form-group">
+                    <label for="genero">Gênero:</label>
+                    <input type="text" id="genero" required>
+                </div>
+                <div class="form-group">
+                    <label for="sinopse">Sinopse:</label>
+                    <input type="text" id="sinopse" required>
+                </div>
+
+                <div id="camposFilme" class="campos-especificos hidden">
+                    <h3>Detalhes do Filme</h3>
+                    <div class="form-group">
+                        <label for="duracao">Duração (min):</label>
+                        <input type="number" id="duracao">
+                    </div>
+                    <div class="form-group">
+                        <label for="diretor">Diretor:</label>
+                        <input type="text" id="diretor">
+                    </div>
+                </div>
+
+            </div>
+
+                <div id="camposSerie" class="campos-especificos hidden">
+                    <h3>Detalhes da Série</h3>
+                    <div class="form-group">
+                        <label for="temporadas">Nº de Temporadas:</label>
+                        <input type="number" id="temporadas">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="episódios">Nº de Episódios Totais:</label>
+                    <input type="number" id="episodio">
+                </div>
+
+                <button type="submit" class="btn primary">CADASTRAR FILME/SÉRIE</button>
+            </form>
+        </section>
+
+        <section id="lista-container">
+            <h2>📜 Lista de Mídias Cadastradas</h2>
+            <div id="listaConteudo" class="lista-itens">
+                <p>Nenhum item cadastrado. Use o formulário ao lado!</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/classes.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

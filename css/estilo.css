@@ -1,0 +1,231 @@
+/* =========================================================
+   ESTILOS BRABOS E EXAGERADOS
+   ========================================================= */
+
+/* 1. Variáveis e Reset (Cores Vibrantes) */
+:root {
+    --cor-principal: #EE0979;   /* Rosa Néon (Vibrante) */
+    --cor-secundaria: #FF6A00;  /* Laranja Eletrizante */
+    --cor-fundo: #1E1E1E;       /* Fundo Escuro/Noturno (Deep Dark) */
+    --cor-card: #2B2B2B;        /* Cor do Card mais escura que o fundo */
+    --cor-texto: #F0F0F0;       /* Texto Claro */
+    --cor-texto-destaque: #00FFFF; /* Ciano/Aqua (Destaque) */
+    --cor-sucesso: #4CAF50;
+    --cor-erro: #F44336;
+    --fonte-principal: 'Poppins', sans-serif; /* Fonte moderna (adicione no HTML se quiser) */
+    --borda-raio: 12px;
+}
+
+/* Importação de fontes (opcional, adicione ao head do HTML)
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    /* Efeito de ruído/textura sutil no fundo */
+    background-image: radial-gradient(circle, var(--cor-card) 1px, transparent 1px);
+    background-size: 25px 25px;
+}
+
+/* 2. Header (Com Gradiente e Sombra Profunda) */
+.header {
+    background: linear-gradient(90deg, var(--cor-secundaria) 0%, var(--cor-principal) 100%);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(238, 9, 121, 0.5); /* Sombra colorida exagerada */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header h1 {
+    font-weight: 800;
+}
+
+/* 3. Layout Principal (Grid e Profundidade) */
+.container {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 40px;
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 30px;
+}
+
+@media (min-width: 992px) {
+    .container {
+        grid-template-columns: 1.2fr 2fr; 
+    }
+}
+
+/* 4. Seções (Neumorfismo Escuro - Dark Neumorphism) */
+section {
+    background-color: var(--cor-card);
+    padding: 30px;
+    border-radius: var(--borda-raio);
+    /* Sombra Dupla para o Efeito 3D/Neumorfismo */
+    box-shadow: 
+        -5px -5px 15px rgba(255, 255, 255, 0.05), /* Sombra clara/topo */
+        5px 5px 15px rgba(0, 0, 0, 0.8);          /* Sombra escura/fundo */
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-3px); /* Efeito sutil de levantar no hover */
+}
+
+h2 {
+    color: var(--cor-secundaria);
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 5. Formulário e Inputs */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    color: var(--cor-texto);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    background-color: var(--cor-fundo); /* Inputs mais escuros que o card */
+    color: var(--cor-texto);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 1em;
+    /* Sombra interna para dar a sensação de "afundado" */
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--cor-principal);
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5), 0 0 5px var(--cor-principal);
+}
+
+.campos-especificos {
+    border-left: 3px solid var(--cor-principal);
+    padding-left: 20px;
+    margin: 20px 0;
+    opacity: 0.9;
+}
+
+/* 6. Botões (Vibrantes e com Efeito Hover) */
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.btn.primary {
+    /* Botão com gradiente */
+    background: linear-gradient(45deg, var(--cor-principal), var(--cor-secundaria));
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 106, 0, 0.4);
+}
+
+.btn.primary:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(238, 9, 121, 0.6);
+    filter: brightness(1.1);
+}
+
+.btn.delete {
+    background-color: var(--cor-erro);
+    color: white;
+    width: auto;
+    font-size: 0.8em;
+    padding: 8px 15px;
+    box-shadow: 0 2px 8px rgba(244, 67, 54, 0.4);
+}
+
+.btn.delete:hover {
+    background-color: #D32F2F;
+    transform: scale(1.05);
+}
+
+/* 7. Lista de Itens (Cards de Conteúdo) */
+.lista-itens {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.card-conteudo {
+    padding: 20px;
+    border-radius: var(--borda-raio);
+    background-color: var(--cor-card);
+    border-left: 5px solid var(--cor-principal);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Repete o efeito Neumorfismo */
+    box-shadow: 
+        -3px -3px 10px rgba(255, 255, 255, 0.05),
+        3px 3px 10px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+}
+
+.card-conteudo:hover {
+    border-left-color: var(--cor-secundaria); /* Mudança de cor no hover */
+    transform: translateX(5px);
+}
+
+.card-conteudo h3 {
+    color: var(--cor-texto-destaque); /* Título em Ciano/Aqua */
+    margin: 0;
+    font-size: 1.4em;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5); /* Efeito Neon Sutil */
+}
+
+.card-conteudo p {
+    margin: 4px 0;
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Estilo para a Tag de Gênero (O objeto Classe Genero) */
+.card-genero-tag {
+    display: inline-block;
+    background: var(--cor-secundaria); /* Usa a cor secundária */
+    color: var(--cor-card); /* Cor de texto escura para contraste */
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75em;
+    font-weight: 800;
+    margin-top: 8px;
+    box-shadow: 0 0 5px rgba(255, 106, 0, 0.5);
+    text-transform: uppercase;
+}
