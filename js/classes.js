@@ -5,8 +5,7 @@ class genero{
     exibirDados(){ return this.nome_genero}
 }
 class midia{
-    constructor(id,titulo,ano,sinopse,genero){
-        this.id = id;
+    constructor(titulo,ano,sinopse,genero){
         this.titulo = titulo;
         this.ano = ano;
         this.sinopse = sinopse;
@@ -14,16 +13,18 @@ class midia{
     }
     exibirDados(){
         return` 
-        Identificação: ${this.id}\n
         Título: ${this.titulo}\n
         Ano: ${this.ano}\n
         Sinopse: ${this.sinopse}\n
         Gênero: ${this.genero.exibirDados()}`
     }
+    toString(){
+        return`${this.titulo}`
+    }
 }
 class filme extends midia{
-    constructor(id,titulo,ano,sinopse,genero,duração,diretor) {
-        super(id,titulo,ano,sinopse,genero);
+    constructor(titulo,ano,sinopse,genero,duração,diretor) {
+        super(titulo,ano,sinopse,genero);
         this.duração =duração;
         this.diretor =diretor;
     }
@@ -35,9 +36,9 @@ class filme extends midia{
     }
 }
 class serie extends midia{
-    constructor(id,titulo,ano,sinopse,genero,numEpisodios,
+    constructor(titulo,ano,sinopse,genero,numEpisodios,
         numTemporadas,diretor) {
-        super(id,titulo,ano,sinopse,genero);
+        super(titulo,ano,sinopse,genero);
         this.numEpisodios = numEpisodios;
         this.numTemporadas = numTemporadas;
         this.diretor =diretor;

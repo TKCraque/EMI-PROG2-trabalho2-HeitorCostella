@@ -6,7 +6,7 @@
     <title>Catálogo Filmes & Séries</title>
     <link rel="stylesheet" href="../css/estilo.css">
 </head>
-<body>
+<body onload="aparecerdonada()">
 
     <header class="header">
         <h1>🎬 Catálogo de Filmes & Séries</h1>
@@ -17,7 +17,7 @@
             <h2>Cadastrar Novo Filme/Série</h2>
             <form id="cadastroForm">
                 <div class="form-group">
-                    <label for="tipoConteudo">Tipo de Mídia:</label>
+                    <label for="tipoConteudos">Tipo de Mídia:</label>
                     <select id="tipoConteudo" required>
                         <option value="Filme">Filme</option>
                         <option value="Serie">Série</option>
@@ -41,7 +41,7 @@
                     <input type="text" id="sinopse" required>
                 </div>
 
-                <div id="camposFilme" class="campos-especificos hidden">
+                <div id="camposFilme" class="campos-especificos escondido">
                     <h3>Detalhes do Filme</h3>
                     <div class="form-group">
                         <label for="duracao">Duração (min):</label>
@@ -55,7 +55,7 @@
 
             </div>
 
-                <div id="camposSerie" class="campos-especificos hidden">
+                <div id="camposSerie" class="campos-especificos escondido">
                     <h3>Detalhes da Série</h3>
                     <div class="form-group">
                         <label for="temporadas">Nº de Temporadas:</label>
@@ -63,20 +63,25 @@
                     </div>
                 </div>
                 
-                <div class="form-group">
-                    <label for="episódios">Nº de Episódios Totais:</label>
-                    <input type="number" id="episodio">
-                </div>
-
-                <button type="submit" class="btn primary">CADASTRAR FILME/SÉRIE</button>
+                <button id="cadastrar" type="submit" class="btn primary">CADASTRAR FILME/SÉRIE</button>
             </form>
         </section>
 
         <section id="lista-container">
             <h2>📜 Lista de Mídias Cadastradas</h2>
-            <div id="listaConteudo" class="lista-itens">
-                <p>Nenhum item cadastrado. Use o formulário ao lado!</p>
+            <div id="palito">
+            <h1>Filmes:</h1>
+            <div id="gremio">
+                <ul id="listafoda1" class="lista-itens">
+                </ul>
             </div>
+            <h1>Séries:</h1>
+            <div>
+
+                <ul id="listafoda2" class="lista-itens">
+                </ul>
+            </div>
+        </div>
         </section>
     </main>
 
