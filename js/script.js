@@ -121,7 +121,7 @@ function removerMidia(indice) {
 }
 // função para ver os detalhes do filme
 function verDetalhes(indice) {
-    // acessa o objeto pelo indice e o remove
+    // acessa o objeto pelo indice e exibe ele
     var midia = listaCadastros[indice];
     alert(midia.exibirDados());
 }
