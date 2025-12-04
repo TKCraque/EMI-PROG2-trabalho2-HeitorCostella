@@ -1,56 +1,63 @@
-class genero{
-    constructor(nome_genero){
+class Genero {
+    constructor(nome_genero) {
         this.nome_genero = nome_genero;
     }
-    exibirDados(){ return this.nome_genero}
+    exibirDados() { 
+        return this.nome_genero;
+    }
 }
-class midia{
-    constructor(titulo,ano,sinopse,genero){
+class Midia {
+
+    constructor(titulo, ano, sinopse, genero, tipoMidia) {
+        this.tipoMidia = tipoMidia; // Filme ou Serie
         this.titulo = titulo;
         this.ano = ano;
         this.sinopse = sinopse;
-        this.genero = genero;
+        this.genero = genero; 
     }
-    exibirDados(){
-        return` 
+    
+    toString() {
+        return `${this.titulo} (${this.ano})`;
+    }
+
+    exibirDados() {
+        return `
+        Tipo: ${this.tipoMidia}\n
         Título: ${this.titulo}\n
         Ano: ${this.ano}\n
         Sinopse: ${this.sinopse}\n
-        Gênero: ${this.genero.exibirDados()}`
-    }
-    toString(){
-        return`${this.titulo}`
+        Gênero: ${this.genero.nome_genero}`;
     }
 }
-class filme extends midia{
-    constructor(titulo,ano,sinopse,genero,duração,diretor) {
-        super(titulo,ano,sinopse,genero);
-        this.duração =duração;
-        this.diretor =diretor;
+
+class Filme extends Midia {
+    constructor(titulo, ano, sinopse, genero, duracao, diretor) {
+        super(titulo, ano, sinopse, genero, 'Filme'); 
+        this.duracao = duracao;
+        this.diretor = diretor;
     }
-    exibirDados(){
-        let infomidia = super.exibirDados()
-        return `${infomidia}\n
-        Duração: ${this.duração}\n
-        Diretor:${this.diretor}\n`
+    
+    exibirDados() {
+        var infoMidia = super.exibirDados();
+        return `${infoMidia}\n
+        Duração: ${this.duracao} minutos\n
+        Diretor: ${this.diretor}`;
     }
 }
-class serie extends midia{
-    constructor(titulo,ano,sinopse,genero,numEpisodios,
-        numTemporadas,diretor) {
-        super(titulo,ano,sinopse,genero);
+
+class Serie extends Midia {
+    constructor(titulo, ano, sinopse, genero, numEpisodios, numTemporadas, diretor) {
+        super(titulo, ano, sinopse, genero, 'Serie'); 
         this.numEpisodios = numEpisodios;
         this.numTemporadas = numTemporadas;
-        this.diretor =diretor;
+        this.diretor = diretor;
     }
-    exibirDados(){
-        let infomidia = super.exibirDados()
-        return `${infomidia}\n
-        Número de Episódios: ${this.numEpisodios}\n
-        Número de Temporadas: ${this.numTemporadas}\n`
+
+    exibirDados() {
+        var infoMidia = super.exibirDados();
+        return `${infoMidia}\n
+        Temporadas: ${this.numTemporadas}\n
+        Episódios: ${this.numEpisodios}\n
+        Diretor: ${this.diretor}`;
     }
 }
-
-
-    
-
