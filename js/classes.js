@@ -17,7 +17,7 @@ class Midia {
     }
     
     toString() {
-        return `${this.titulo} (${this.ano})`;
+        return `${this.titulo} (${this.ano}) ${this.sinopse} ${this.genero.nome_genero}`;
     }
 
     exibirDados() {
